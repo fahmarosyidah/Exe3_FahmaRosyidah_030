@@ -134,6 +134,35 @@ namespace Exercise3
             prev.next = newNode;
         }
 
+        //Method untuk menghapus node tertentu di dalam list
+        public bool delNode(int rollNo)
+        {
+            Node prev, curr;
+            prev = LAST.next;
+            curr = LAST.next;
+
+            if (Search(rollNo, ref prev, ref curr) == false)
+                return false;
+
+            prev.next = curr.next;
+
+            if (curr == LAST.next)
+                LAST.next = curr.next;
+
+            while ((rollNo != curr.rollNumber) && (prev.rollNumber != LAST.rollNumber))
+            {
+                prev = curr;
+                curr = curr.next;
+            }
+
+            if (curr == LAST)
+            {
+                prev.next = LAST.next;
+                LAST = prev;
+            }
+            return true;
+        }
+
         static void Main(string[] args)
         {
             //Membuat objek baru untuk class CircularList
