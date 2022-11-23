@@ -30,6 +30,8 @@ namespace Exercise3
             }
             if (rollNo == LAST.rollNumber) //jika node berada di akhir
                 return true;
+            else
+                return (false); //jika node tidak ditemukan
         }
 
         static void Main(string[] args)
