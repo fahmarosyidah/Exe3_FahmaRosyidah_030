@@ -73,7 +73,8 @@ namespace Exercise3
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Membuat objek baru untuk class CircularList
+            CircularList obj = new CircularList();
         }
     }
 }
