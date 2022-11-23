@@ -15,6 +15,10 @@ namespace Exercise3
     {
         Node LAST;
 
+        public CircularList()
+        {
+            LAST = null;
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
