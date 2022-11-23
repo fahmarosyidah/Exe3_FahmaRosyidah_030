@@ -13,6 +13,8 @@ namespace Exercise3
 
     class CircularList
     {
+        Node LAST;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
