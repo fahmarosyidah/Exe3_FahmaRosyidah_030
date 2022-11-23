@@ -34,6 +34,14 @@ namespace Exercise3
                 return (false); //jika node tidak ditemukan
         }
 
+        public bool listEmpty()
+        {
+            if (LAST == null)
+                return true;
+            else
+                return false;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
