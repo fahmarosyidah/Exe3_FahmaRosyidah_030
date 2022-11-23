@@ -52,6 +52,14 @@ namespace Exercise3
                 Console.WriteLine("\nRecords in the list are: \n");
                 Node curretntNode;
                 curretntNode = LAST.next;
+
+                //Jika current node tidak sama dengan nilai LAST
+                while (curretntNode != LAST)
+                {
+                    Console.Write(curretntNode.rollNumber + "   " + curretntNode.name + "\n");
+                    curretntNode = curretntNode.next;
+                }
+                Console.Write(LAST.rollNumber + "   " + LAST.name + "\n");
             }
         }
 
