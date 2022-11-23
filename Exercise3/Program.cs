@@ -10,7 +10,8 @@ namespace Exercise3
         //Membuat node untuk next circular list
         public Node next;
     }
-    class Program
+
+    class CircularList
     {
         static void Main(string[] args)
         {
