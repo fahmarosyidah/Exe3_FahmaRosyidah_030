@@ -28,6 +28,8 @@ namespace Exercise3
                 if (rollNo == current.rollNumber)
                     return (true); //jika node ditemukan
             }
+            if (rollNo == LAST.rollNumber) //jika node berada di akhir
+                return true;
         }
 
         static void Main(string[] args)
