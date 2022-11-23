@@ -42,6 +42,19 @@ namespace Exercise3
                 return false;
         }
 
+        //method untuk membaca isi list
+        public void traverse()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are: \n");
+                Node curretntNode;
+                curretntNode = LAST.next;
+            }
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
