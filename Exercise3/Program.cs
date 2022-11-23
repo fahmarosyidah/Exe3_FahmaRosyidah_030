@@ -71,6 +71,69 @@ namespace Exercise3
             else Console.WriteLine("\nThe first record in the list is: \n\n" + LAST.next.rollNumber + "   " + LAST.next.name);
         }
 
+        //Method untuk menambahkan node baru
+        public void addNode()
+        {
+            int rolNo;
+            string name;
+            Console.Write("\nEnter the student number: ");
+            rolNo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter the student name: ");
+            name = Console.ReadLine();
+
+            Node newNode = new Node();
+            newNode.rollNumber = rolNo;
+            newNode.name = name;
+
+            //jika node yang akan disisipkan adalah node pertama
+            if (LAST == null)
+            {
+                LAST = newNode;
+                newNode.next = LAST;
+                return;
+            }
+
+            //jika node yang akan disisipkan berada di awal list
+            if (rolNo <= LAST.next.rollNumber)
+            {
+                if ((LAST != null) && (rolNo == LAST.next.rollNumber))
+                {
+                    Console.WriteLine("\nDuplicate student numbers not allowed\n");
+                    return;
+                }
+                newNode.next = LAST.next;
+                LAST.next = newNode;
+            }
+
+            //Membuat node prev, curr
+            Node prev, curr;
+
+            curr = LAST.next;
+            prev = LAST.next;
+
+            while ((prev != LAST) && (rolNo >= curr.rollNumber))
+            {
+                if (rolNo == curr.rollNumber)
+                {
+                    Console.WriteLine("\nDuplicate student numbers not allowed\n");
+                    return;
+                }
+                prev = curr;
+                curr = curr.next;
+            }
+
+            //jika node akan dimasukan di akhir list
+            if (rolNo > LAST.rollNumber)
+            {
+                newNode.next = LAST.next;
+                LAST.next = newNode;
+                LAST = newNode;
+                return;
+            }
+            newNode.next = curr;
+            prev.next = newNode;
+        }
+
         static void Main(string[] args)
         {
             //Membuat objek baru untuk class CircularList
