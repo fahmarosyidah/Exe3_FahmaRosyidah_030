@@ -19,6 +19,13 @@ namespace Exercise3
         {
             LAST = null;
         }
+
+        //Method untuk mencari apakah node yang dimaksud ada di dalam list
+        public bool Search(int rollNo, ref Node previous, ref Node current)
+        {
+            
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
